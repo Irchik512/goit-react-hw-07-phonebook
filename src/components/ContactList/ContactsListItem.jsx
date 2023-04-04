@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Contact } from 'components/ContactList/ContactsListItem.styled';
 import { Button } from 'components/ContactForm/ContactForm.styled';
 import { useDispatch } from 'react-redux';
-import { removeContact } from 'redux/contactsSlice';
+import { deleteContact } from 'redux/operations.js';
 
 export default function ContactsListItem({ name, number, id }) {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ export default function ContactsListItem({ name, number, id }) {
       <p>
         {name}: {number}
       </p>
-      <Button type="button" onClick={() => dispatch(removeContact(id))}>
+      <Button type="button" onClick={() => dispatch(deleteContact(id))} >
         Delete
       </Button>
     </Contact>
