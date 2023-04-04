@@ -9,7 +9,7 @@ export const getAllContacts = createAsyncThunk("contacts/fetchAll", async (_, th
   const response = await axios.get("/contacts");
   return response.data;   
 } catch (e) {
-  return thunkAPI.rejectWithValue(e);
+  return thunkAPI.rejectWithValue(e.message);
 }
 });
 
